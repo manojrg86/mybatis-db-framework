@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oms.sql.OnlineOrder">
+	<select id="selectOnlineOrder" resultType="com.entity.OnlineOrderContainer">
+		SELECT DC_NO AS
+		dcNo,SO_NO AS soNo ,INTEGER(RAND()*100000+1) onlineOrder FROM
+		DBTOME1.OKORTOH WHERE DC_NO ='8934'
+		AND SO_ORD_STAT_CD ='O' AND DLVR_CUR_DT > CURRENT DATE
+		AND ORD_ORIG_SYS_NO LIKE '09300%'
+		FETCH FIRST 2 ROWS ONLY;
+	</select>
+</mapper>

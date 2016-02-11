@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.ibm.db2.jcc.DB2Driver" />
+				<property name="url" value="jdbc:db2://dummy.client.com:1313/DB90" />
+				<property name="username" value="dummy" />
+				<property name="password" value="dummy" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="db/mapper/DataMapper.xml" />
+	</mappers>
+</configuration>
